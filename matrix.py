@@ -1,5 +1,3 @@
-import math
-
 class Matrix:
     def __init__(self, matrix=None):
         if matrix is not None:
@@ -244,7 +242,7 @@ class Matrix:
     # Chuan l2 cua vector
     @staticmethod
     def vector_norm_l2(vector):
-        return math.sqrt(sum(x ** 2 for x in vector))
+        return (sum(x ** 2 for x in vector))**0.5
 
     # Chuan l1 cua vector
     @staticmethod
@@ -253,7 +251,7 @@ class Matrix:
 
     # Chuan fr0benius cua ma tran
     def matrix_norm_frobenius(self):
-        return math.sqrt(sum(cell ** 2 for row in self.matrix for cell in row))
+        return (sum(cell ** 2 for row in self.matrix for cell in row))**0.5
 
     def shape(self):
         return self.R, self.C  # so hang, so cot
